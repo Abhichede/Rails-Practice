@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  serial_no: MyString
+  trade_name: MyString
+  pkg_size: MyString
+  technicl_name: MyString
+  company_name: MyString
+  batch_no: MyString
+  exp_date: 2017-01-28
+  qty: 1
+  rate: 1
+
+two:
+  serial_no: MyString
+  trade_name: MyString
+  pkg_size: MyString
+  technicl_name: MyString
+  company_name: MyString
+  batch_no: MyString
+  exp_date: 2017-01-28
+  qty: 1
+  rate: 1

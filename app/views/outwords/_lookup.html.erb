@@ -1,0 +1,75 @@
+<%- model_class = Outword -%>
+<div class="sales-search-row">
+  <div class="sales-search col-lg-8 col-md-8 col-sm-8">
+    <div class="col-md-8">
+      <%= form_tag search_stock_path, remote: true, method: :get, id: 'outward-lookup-form'  do %>
+        <div class="form-group row no-padding text-center col-md-12">
+          <div class="col-md-10 input-group">
+            <%= text_field_tag :search, params[:search],placeholder: 'Trade name',
+                               autofocus: true,  class: 'form-control search-box', id: 'search-box' %>
+            <span class="input-group-btn">
+              <%= button_tag(type: :submit, class: 'btn btn-primary', id: 'add-stock-btn') do %>
+                <i class="fa fa-plus"></i>
+            <% end %>
+            </span>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+    <div class="col-md-4 error-msg" style="display: none">
+      <%= render 'common/spinner' %>
+    </div>
+  </div>
+
+  <div class="customer-search customer-row">
+    <div class="row">
+      <div class="col-md-12">
+        <%= render 'customers/lookup' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="">
+  <div class="search-table col-md-8" >
+    <table class="table table-striped outwards-table">
+      <thead>
+      <tr>
+        <!-- <th><%= model_class.human_attribute_name(:id) %></th> -->
+        <th><%= model_class.human_attribute_name(:serial_no) %></th>
+        <th><%= model_class.human_attribute_name(:trade_name) %></th>
+        <th><%= model_class.human_attribute_name(:rate) %></th>
+        <th><%= model_class.human_attribute_name(:qty) %></th>
+        <th>Amount</th>
+        <th>Remove</th>
+        <!-- <th><%= model_class.human_attribute_name(:created_at) %></th> -->
+      </tr>
+      </thead>
+      <tbody id="sales-table">
+        <% if @outward %>
+
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="totals-row">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="label label-default ">Total Quantity: <span id="total-quantity">0</span> </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="label label-primary">Total Amount: <span id="total-amount">0</span> </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  $("#search-box").autocomplete({
+    source: '<%= autocomplete_stocks_path(:json) %>'
+  });
+</script>

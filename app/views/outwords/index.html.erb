@@ -1,0 +1,32 @@
+<%- model_class = Outword -%>
+
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <!-- <th><%= model_class.human_attribute_name(:id) %></th> -->
+    <th><%= model_class.human_attribute_name(:serial_no) %></th>
+    <th><%= model_class.human_attribute_name(:trade_name) %></th>
+    <th><%= model_class.human_attribute_name(:rate) %></th>
+    <th><%= model_class.human_attribute_name(:qty) %></th>
+    <th><%= model_class.human_attribute_name(:discount) %></th>
+    <th><%= model_class.human_attribute_name(:vat) %></th>
+    <!-- <th><%= model_class.human_attribute_name(:created_at) %></th> -->
+  </tr>
+  </thead>
+  <tbody>
+    <% @outwards.each do |outward| %>
+      <tr>
+        <td><%= outward.serial_no %></td>
+        <td><%= outward.trade_name %></td>
+        <td><%= outward.rate %></td>
+        <td><%= outward.qty %></td>
+        <td><%= outward.discount %></td>
+        <td><%= outward.vat %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

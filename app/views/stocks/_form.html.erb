@@ -1,0 +1,88 @@
+<%= form_for @stock, :html => { :class => "form-horizontal stock" } do |f| %>
+
+  <% if @stock.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@stock.errors.count, "error") %> prohibited this stock from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @stock.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :serial_no, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= f.text_field :serial_no, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:serial_no) %>
+
+    <%= f.label :trade_name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= f.text_field :trade_name, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:trade_name) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :pkg_size, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= f.text_field :pkg_size, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:pkg_size) %>
+
+    <%= f.label :technicl_name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= f.text_field :technicl_name, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:technicl_name) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :company_name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= f.text_field :company_name, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:company_name) %>
+
+    <%= f.label :batch_no, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= f.text_field :batch_no, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:batch_no) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :exp_date, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= f.text_field :exp_date, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:exp_date) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :qty, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= f.text_field :qty, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:qty) %>
+
+    <%= f.label :rate, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-4">
+      <%= f.text_field :rate, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:rate) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                stocks_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

@@ -1,0 +1,108 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require jquery-ui
+ *= require_tree .
+ *= require_self
+ *= require bootstrap_and_overrides
+ # SASS
+ *= require devise_bootstrap_views
+ */
+
+body{
+    background-color: #F7F7F7;
+}
+
+footer{
+    margin: 20px;
+}
+.pages{
+    margin: 10px 10px ;
+}
+
+.row{
+    margin: 0;
+}
+
+.main-content{
+    padding: 10px 10px;
+}
+.panel-body{
+    background-color: #F7F7F7;
+}
+.navbar{
+    background-color: #d9534f;
+}
+nav.navbar div#bs-example-navbar-collapse-1 ul.nav li a{
+    color: #ffffff;
+
+
+}
+.navbar-default .navbar-nav  .active{
+    background:#730E15;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    background:#730E15;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus{
+    background:#730E15;
+}
+nav.navbar div#bs-example-navbar-collapse-1 ul.nav li a:hover{
+    background:#730E15;
+}
+
+.dropdown-menu{
+    background:#d9534f;
+}
+.dropdown-menu li a{
+    color: #ffffff;
+}
+.dropdown-menu li a:hover{
+    color: #000000;
+}
+a:hover{
+    text-decoration: none;
+}
+
+.sales-search{
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    max-width: 75%;
+}
+
+.search-table{
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+.error-msg{
+    color: red;
+}
+.customer-row{
+    float: right;
+    max-width: 25%;
+    background-color: rgba(0, 0, 0, 0.37);
+    padding: 10px;
+    color: #ffffff;
+    border-radius: 5px;
+}
+.totals-row{
+    float: right;
+    background-color: rgba(255, 251, 249, 0.32);
+    padding: 10px;
+    border-radius: 10px;
+}

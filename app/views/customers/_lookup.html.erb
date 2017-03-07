@@ -1,0 +1,44 @@
+
+<div class="row">
+  <div class="customer-search">
+      <%= form_tag search_customer_path, remote: true, method: :get, id: 'customer-lookup-form'  do %>
+          <div class="form-group row no-padding col-md-12">
+            <div class="input-group">
+              <%= text_field_tag :search, params[:search],placeholder: 'Customer name',
+                                 class: 'form-control customer-search-box', id: 'customer-search-box' %>
+              <span class="input-group-btn">
+              <%= button_tag(type: :submit, class: 'btn btn-success', id: 'add-customer-btn') do %>
+                <i class="fa fa-search"></i>
+            <% end %>
+            </span>
+            </div>
+          </div>
+
+      <% end %>
+  </div>
+</div>
+<div class="row">
+  <div class="customer-error-msg" style="display: none">
+    <%= render 'common/spinner' %>
+  </div>
+</div>
+<div class="context-row">
+  <h4>Customer Details</h4>
+  <hr/>
+  <div id="customer-details">
+    <% if @customer %>
+
+        <strong>Name: </strong> <%= @customer.name %>
+        <strong>Email: </strong> <%= @customer.email %>
+        <strong>Mobile: </strong> <%= @customer.contact %>
+        <strong>Address: </strong> <%= @customer.address %>
+
+    <% end %>
+  </div>
+</div>
+
+<script>
+  $("#customer-search-box").autocomplete({
+    source: '<%= autocomplete_customers_path(:json) %>'
+  });
+</script>

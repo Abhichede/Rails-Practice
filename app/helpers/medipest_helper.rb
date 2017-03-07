@@ -1,0 +1,2 @@
+module MedipestHelper
+end
